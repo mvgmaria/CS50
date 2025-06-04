@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Current price</th>
+            <th>TOTAL</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        {% for row in data %}
+
+        <tr>
+                <td>{{ row["symbol"] }}</td>
+                <td>{{ row["shares"] }}</td>
+                <td>{{ "$%.2f"|format(curr_prices[row["symbol"]]|float) }}</td>
+                <td>{{ (row["shares"] * curr_prices[row["symbol"]]) | usd }}</td>
+
+
+        </tr>
+        {% endfor %}
+        <tr>
+            <td> <b>My cash: </b></td>
+            <td>  </td>
+            <td>  </td>
+            <td> {{ my_money }} </td>
+        </tr>
+        <tr>
+            <td><b> Total: </b></td>
+            <td>  </td>
+            <td>  </td>
+            <td>{{ total_value }}</td>
+        </tr>
+
+    </tbody>
+</table>
+{% endblock %}

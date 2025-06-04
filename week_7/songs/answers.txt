@@ -1,0 +1,12 @@
+I think I would try to establish ranges from which I would calculate the "moods" depending on which parameter is higher, then the combination of that two moods would result in a certain aura.
+For example: A high energy and high danceability would result in a party-crusher aura.
+
+Even if we can estimate that this person has a taste for a certain type of music based on those three parameters (enery, valence and danceability), I would argue that an 'aura' is a more complex concept that also needs more sources to be representative for the person and their fluctuations. Maybe the parameters varied a lot during the year, but the overall average gives a 'false' result in terms of gauging the person's tastes.
+
+For that I would suggest adding more parameters, because in this case more layers would result in a more accurate representation of the user's vibe, like the loudness, tempo, and speechiness.
+
+For example, a highly energetic and highly danceable song is very different if it has low or high speechiness. That could be the difference between a Techno song and a highly paced anime opening. As we see, genres of music do become handy as well.
+
+Also, it would be important to analyse any time-related trends for the main parameters, and then getting the average based on those.
+
+For example, a person with an overall 50 average energy points that resulted from a very intense period of the year followed by music completely different the rest of the year, would give a not so representative view as a more consistent 40 average in valence points that were mantained through the year. So consistency is also an important parameter.

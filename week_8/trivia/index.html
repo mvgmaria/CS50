@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                let buttonA = document.querySelector('#a');
+                let buttonB = document.querySelector('#b');
+                let buttonC = document.querySelector('#c');
+                let resultText = document.querySelector('#resultMultiple');
+
+                function resetButtons() {
+                    buttonA.style.backgroundColor = '';
+                    buttonB.style.backgroundColor = '';
+                    buttonC.style.backgroundColor = '';
+                }
+
+                function changeColor(button, color, text) {
+                        if (button.style.backgroundColor === color) {
+                            button.style.backgroundColor = '';
+                            resultText.textContent = '';
+                        }
+                        else {
+                            resetButtons();
+                            button.style.backgroundColor = color;
+                            resultText.textContent = text;
+                        }
+                }
+
+                buttonA.addEventListener('click', function() {
+                    // we have to assign the new value based on the if statement (this has an abbreviated sintax)
+                    changeColor(buttonA, 'red', 'Incorrect');
+                });
+
+                buttonB.addEventListener('click', function() {
+                    changeColor(buttonB, 'green', 'Correct!');
+                });
+
+                buttonC.addEventListener('click', function() {
+                    changeColor(buttonC, 'red', 'Incorrect');
+                });
+
+
+                let input = document.querySelector('#answer');
+                let resultFree = document.querySelector('#resultFree');
+
+                document.querySelector('form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let answer = input.value.trim();
+                    if (answer.toLowerCase() === "gri-gri") {
+                            input.style.backgroundColor = 'green';
+                            resultFree.textContent = 'Correct!';
+                        }
+                    else if (answer.length > 0) {
+                        input.style.backgroundColor = 'red';
+                        resultFree.textContent = 'Incorrect';
+                    }
+                    else {
+                        input.style.backgroundColor = '';
+                        resultFree.textContent = '';
+                    }
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                    <h3>What is the most common diameter for a sport climbing rope?</h3>
+                    <div id="resultMultiple"></div> <br>
+                    <div class="buttons">
+                        <button id="a">Less than 8 mm</button>
+                        <button id="b">Between 8 and 10 mm</button>
+                        <button id="c">More than 10 mm</button>
+
+                    </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the most commonnly used semi-automatic device for belaying in sport climbing?</h3>
+                <div id="resultFree"></div> <br>
+                <form>
+                    <input autocomplete="off" autofocus id="answer" placeholder="Answer" type="text">
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

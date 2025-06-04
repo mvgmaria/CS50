@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: In the best case scenario (the sorted array) it has the fastest running time, compared to the others. Bubble sort has a running time of Ω(n) vs Ω(n logn) in the case of mergesort, and Ω(n^2) in the case of selection sort, so thats why its clear that sort1 uses a Bubble sort algorithm.
+
+sort2 uses: Mergesort
+
+How do you know?: It has the fastest running time in the worst case scenario (the reversed array) and in the random array, as well. Mergesort has a running time of O(n logn) vs. Selection sort and Bubble sort, that have both a running time of O(n^2).
+
+sort3 uses: Selection sort
+
+How do you know?: It has the slower running time in the best case scenario (the sorted array), compared to the others, but specially with the sort1, which corresponds to Bubble sort. Bubble sort and Selection sort have both the same running time in the worst case scenario (reversed array): O(n^2); but they have different running times in the best case scenario (sorted array), respectively Ω(n) and Ω(n^2).

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>TOTAL</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        {% for row in data %}
+
+        <tr>
+                <td>{{ row["symbol"] }}</td>
+                <td>{{ row["shares"] }}</td>
+                <td>${{ row["price"] }}</td>
+                <td>{{ row["type"] }}</td>
+                <td>{{ row["datetime"] }}</td>
+                <td>${{ row["price"] * row["shares"]}} </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td> <b>My cash: </b></td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td> ${{ my_money }} </td>
+        </tr>
+        <tr>
+            <td><b> Total: </b></td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td> ${{ my_money }} </td>
+        </tr>
+
+    </tbody>
+</table>
+{% endblock %}
